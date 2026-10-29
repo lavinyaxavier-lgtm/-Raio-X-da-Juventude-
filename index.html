@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raio-X da Juventude</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #102a43, #176b87);
+      color: white;
+      padding: 65px 20px;
+      text-align: center;
+    }
+
+    header h1 { font-size: 2.6rem; margin-bottom: 15px; }
+    header p { max-width: 700px; margin: auto; }
+
+    nav {
+      background: #0b1f33;
+      padding: 14px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 0.95rem;
+    }
+
+    main { max-width: 1050px; margin: auto; padding: 30px 20px; }
+    section { margin-bottom: 35px; }
+
+    h2 {
+      color: #176b87;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #d9e7ef;
+      padding-bottom: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #0f172a10;
+    }
+
+    .card h3 { color: #176b87; margin-bottom: 8px; }
+    .chart { background: white; padding: 20px; border-radius: 12px; margin: 18px 0; }
+    canvas { width: 100%; max-height: 340px; }
+
+    .notice {
+      background: #fff7df;
+      border-left: 4px solid #e5a000;
+      padding: 14px;
+      margin: 15px 0;
+      border-radius: 5px;
+    }
+
+    li { margin: 8px 0 8px 22px; }
+    a { color: #087eaa; }
+    footer {
+      text-align: center;
+      background: #0b1f33;
+      color: white;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      nav a { display: inline-block; margin: 5px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Raio-X da Juventude</h1>
+    <p>Análise das condições de vida, educação e oportunidades para os jovens.</p>
+    <p>Dados para compreender desigualdades e construir soluções.</p>
+  </header>
+
+  <nav>
+    <a href="#projeto">Projeto</a>
+    <a href="#indicadores">Indicadores</a>
+    <a href="#graficos">Gráficos</a>
+    <a href="#solucoes">Soluções</a>
+    <a href="#fontes">Fontes</a>
+  </nav>
+
+  <main>
+    <section id="projeto">
+      <h2>Sobre o projeto</h2>
+      <p>
+        O Raio-X da Juventude tem como objetivo investigar as condições
+        socioeconômicas, educacionais e de qualidade de vida dos jovens.
+        A análise busca identificar desigualdades e produzir informações
+        que apoiem iniciativas sociais e educacionais.
+      </p>
+      <div class="notice">
+        <strong>Nota metodológica:</strong> os gráficos desta versão utilizam
+        dados simulados para demonstrar o funcionamento do painel. Eles não
+        representam estatísticas reais da juventude brasileira.
+      </div>
+    </section>
+
+    <section id="indicadores">
+      <h2>O que será analisado?</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Condições socioeconômicas</h3>
+          <p>Renda familiar, moradia, saneamento e acesso à internet.</p>
+        </article>
+        <article class="card">
+          <h3>Educação</h3>
+          <p>Frequência escolar, horas de estudo, infraestrutura e materiais didáticos.</p>
+        </article>
+        <article class="card">
+          <h3>Qualidade de vida</h3>
+          <p>Deslocamento, lazer, bem-estar e perspectivas de futuro.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="graficos">
+      <h2>Painel de indicadores</h2>
+      <p>Exemplos visuais com dados demonstrativos.</p>
+
+      <div class="chart">
+        <h3>Frequência escolar — exemplo ilustrativo</h3>
+        <canvas id="escola"></canvas>
+      </div>
+
+      <div class="chart">
+        <h3>Acesso à internet — exemplo ilustrativo</h3>
+        <canvas id="internet"></canvas>
+      </div>
+
+      <div class="chart">
+        <h3>Principais dimensões de análise</h3>
+        <canvas id="dimensoes"></canvas>
+      </div>
+    </section>
+
+    <section id="solucoes">
+      <h2>Propostas de impacto</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>01. Inclusão digital</h3>
+          <p>Ampliar o acesso gratuito à internet, computadores e espaços comunitários de estudo.</p>
+        </article>
+        <article class="card">
+          <h3>02. Apoio e mentoria</h3>
+          <p>Promover orientação pedagógica, mentoria estudantil e acesso a apoio psicossocial.</p>
+        </article>
+        <article class="card">
+          <h3>03. Preparação para o futuro</h3>
+          <p>Oferecer cursos de programação, análise de dados e competências digitais.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="metodologia">
+      <h2>Metodologia</h2>
+      <ol>
+        <li>Coletar dados de fontes públicas ou questionários.</li>
+        <li>Limpar e organizar os dados com Python, pandas e NumPy.</li>
+        <li>Realizar análises exploratórias e comparar indicadores.</li>
+        <li>Criar visualizações com Matplotlib, Seaborn ou Plotly.</li>
+        <li>Publicar os resultados e recomendações neste painel.</li>
+      </ol>
+    </section>
+
+    <section id="fontes">
+      <h2>Fontes de dados</h2>
+      <ul>
+        <li><a href="https://www.ibge.gov.br/" target="_blank" rel="noopener">IBGE — Instituto Brasileiro de Geografia e Estatística</a></li>
+        <li><a href="https://www.gov.br/inep/pt-br" target="_blank" rel="noopener">INEP — Dados e indicadores educacionais</a></li>
+        <li><a href="https://sidra.ibge.gov.br/" target="_blank" rel="noopener">SIDRA — Tabelas estatísticas do IBGE</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Resultados esperados</h2>
+      <p>
+        Identificar necessidades prioritárias, compreender desigualdades,
+        apoiar o planejamento de ações educacionais e disponibilizar
+        informações de forma clara e acessível à comunidade.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Raio-X da Juventude | Projeto de análise de dados e impacto social</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    new Chart(document.getElementById('escola'), {
+      type: 'bar',
+      data: {
+        labels: ['Regular', 'Irregular', 'Fora da escola'],
+        datasets: [{
+          label: 'Percentual ilustrativo (%)',
+          data: [75, 18, 7],
+          backgroundColor: ['#176b87', '#f0b44d', '#dc6868']
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true, max: 100 } }
+      }
+    });
+
+    new Chart(document.getElementById('internet'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Com acesso', 'Sem acesso'],
+        datasets: [{
+          data: [80, 20],
+          backgroundColor: ['#176b87', '#f0b44d']
+        }]
+      },
+      options: { responsive: true }
+    });
+
+    new Chart(document.getElementById('dimensoes'), {
+      type: 'bar',
+      data: {
+        labels: ['Socioeconômica', 'Educação', 'Qualidade de vida'],
+        datasets: [{
+          label: 'Dimensões do projeto',
+          data: [1, 1, 1],
+          backgroundColor: ['#176b87', '#38a58b', '#f0b44d']
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { x: { display: false, min: 0, max: 1.2 } }
+      }
+    });
+  </script>
+</body>
+</html>
